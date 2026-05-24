@@ -1,6 +1,6 @@
 export const dynamic = 'force-dynamic'
 
-﻿import Link from "next/link"
+import Link from "next/link"
 import { tracks } from "@/lib/tracks"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"

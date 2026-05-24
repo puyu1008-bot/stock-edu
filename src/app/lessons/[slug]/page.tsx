@@ -1,6 +1,6 @@
 export const dynamic = 'force-dynamic'
 
-﻿import { notFound } from "next/navigation"
+import { notFound } from "next/navigation"
 import Link from "next/link"
 import { getLessonContent } from "@/lib/content-registry"
 import { getTrack, getStage, getAllLessons } from "@/lib/tracks"

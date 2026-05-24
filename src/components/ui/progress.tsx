@@ -1,4 +1,4 @@
-﻿// Progress component - simple progress bar
+// Progress component - simple progress bar
 import { cn } from "@/lib/utils"
 
 interface ProgressProps {
