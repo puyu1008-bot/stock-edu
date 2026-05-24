@@ -1,0 +1,171 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Prevent horizontal overflow on mobile */
+    overflow-x: hidden;
+    width: 100%;
+  }
+  /* Min 16px body text on all screens to prevent iOS zoom */
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
+/* ============================================
+   CALLOUT BOXES
+   ============================================ */
+.callout-why {
+  @apply border-l-4 border-blue-500 bg-blue-50 dark:bg-blue-950 p-3 sm:p-4 rounded-r-lg my-4;
+}
+
+.callout-mistake {
+  @apply border-l-4 border-red-500 bg-red-50 dark:bg-red-950 p-3 sm:p-4 rounded-r-lg my-4;
+}
+
+.callout-case {
+  @apply border-l-4 border-green-500 bg-green-50 dark:bg-green-950 p-3 sm:p-4 rounded-r-lg my-4;
+}
+
+.callout-takeaway {
+  @apply border-l-4 border-amber-500 bg-amber-50 dark:bg-amber-950 p-3 sm:p-4 rounded-r-lg my-4;
+}
+
+/* Callout content text */
+.callout-why p,
+.callout-mistake p,
+.callout-case p,
+.callout-takeaway p {
+  @apply text-sm sm:text-base;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* ============================================
+   LESSON CONTENT
+   ============================================ */
+.lesson-content h1 {
+  @apply text-2xl sm:text-3xl font-bold mt-8 mb-4;
+}
+
+.lesson-content h2 {
+  @apply text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4;
+}
+
+.lesson-content h3 {
+  @apply text-lg sm:text-xl font-semibold mt-5 sm:mt-6 mb-2 sm:mb-3;
+}
+
+.lesson-content p {
+  @apply mb-4 leading-relaxed text-base sm:text-base;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.lesson-content ul {
+  @apply list-disc pl-5 sm:pl-6 mb-4 space-y-1.5 sm:space-y-2;
+}
+
+.lesson-content ol {
+  @apply list-decimal pl-5 sm:pl-6 mb-4 space-y-1.5 sm:space-y-2;
+}
+
+.lesson-content li {
+  @apply text-base;
+}
+
+/* ============================================
+   QUIZ TOUCH TARGETS (min 44px)
+   ============================================ */
+.quiz-option {
+  @apply flex items-center gap-2 p-3 sm:p-2 rounded border cursor-pointer transition-colors;
+  min-height: 44px;
+}
+
+.quiz-option input[type="radio"] {
+  @apply h-5 w-5;
+  flex-shrink: 0;
+}
+
+/* ============================================
+   GLOBAL MOBILE PREVENTION
+   ============================================ */
+/* Prevent any element from causing horizontal scroll */
+img, video, iframe, pre, code, table {
+  max-width: 100%;
+}
+
+/* Ensure all containers don't overflow */
+.container {
+  @apply max-w-full overflow-x-hidden;
+}
+
+/* Force word break on long unbreakable strings */
+.break-words-force {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+/* ============================================
+   MOBILE NAV TWEAKS
+   ============================================ */
+@media (max-width: 767px) {
+  .nav-mobile-link {
+    @apply py-3 text-base;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* ============================================
+   CARD & PAGE SPACING
+   ============================================ */
+@media (max-width: 640px) {
+  .card-mobile-full {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+
+  /* Reduce page heading sizes on mobile */
+  .page-heading {
+    @apply text-2xl;
+  }
+
+  /* Ensure buttons have proper touch targets on mobile */
+  button, [role="button"], a.btn, .btn {
+    min-height: 44px;
+  }
+}

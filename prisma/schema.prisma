@@ -1,0 +1,70 @@
+﻿generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String     @id @default(cuid())
+  email        String     @unique
+  name         String?
+  passwordHash String?
+  image        String?
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  progress     Progress[]
+  bookmarks    Bookmark[]
+  notes        Note[]
+}
+
+model Lesson {
+  id       String     @id @default(cuid())
+  trackId  String
+  stageId  String
+  moduleId String
+  slug     String     @unique
+  title    String
+  order    Int
+  progress Progress[]
+  bookmarks Bookmark[]
+  notes    Note[]
+}
+
+model Progress {
+  id        String    @id @default(cuid())
+  userId    String
+  lessonId  String
+  completed Boolean   @default(false)
+  quizScore Int?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lesson    Lesson    @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, lessonId])
+}
+
+model Bookmark {
+  id        String   @id @default(cuid())
+  userId    String
+  lessonId  String
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lesson    Lesson   @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, lessonId])
+}
+
+model Note {
+  id        String   @id @default(cuid())
+  userId    String
+  lessonId  String
+  content   String   @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lesson    Lesson   @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+}
