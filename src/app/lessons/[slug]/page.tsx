@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 ﻿import { notFound } from "next/navigation"
 import Link from "next/link"
 import { getLessonContent } from "@/lib/content-registry"
@@ -139,7 +141,3 @@ export default async function LessonPage({ params }: LessonPageProps) {
   )
 }
 
-export async function generateStaticParams() {
-  const all = getAllLessons()
-  return all.map(l => ({ slug: l.slug }))
-}

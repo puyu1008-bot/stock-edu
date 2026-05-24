@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 ﻿import Link from "next/link"
 import { tracks } from "@/lib/tracks"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
