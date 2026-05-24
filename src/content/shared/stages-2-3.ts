@@ -1,4 +1,4 @@
-﻿import type { LessonContent } from "@/types"
+import type { LessonContent } from "@/types"
 
 // Reusing the compact format from all-content.ts
 type SL = [string, string, string, string, string[], [string,string][], [string,string[],number,string][]]

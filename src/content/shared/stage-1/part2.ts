@@ -1,4 +1,4 @@
-﻿import type { LessonContent } from "@/types"
+import type { LessonContent } from "@/types"
 
 export const trendLines: LessonContent = {
   slug: "trend-lines", title: "趋势线：正确画法及突破识别",

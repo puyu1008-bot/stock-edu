@@ -1,4 +1,4 @@
-﻿import type { LessonContent } from "@/types"
+import type { LessonContent } from "@/types"
 
 const lessonContents: Map<string, () => Promise<LessonContent>> = new Map()
 

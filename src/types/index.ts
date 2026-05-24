@@ -1,4 +1,4 @@
-﻿export interface LessonMeta {
+export interface LessonMeta {
   id: string
   trackId: string
   stageId: string

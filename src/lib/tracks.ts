@@ -1,4 +1,4 @@
-﻿import type { TrackDef } from "@/types"
+import type { TrackDef } from "@/types"
 
 export const tracks: TrackDef[] = [
   {

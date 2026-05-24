@@ -1,4 +1,4 @@
-﻿import type { LessonContent } from "@/types"
+import type { LessonContent } from "@/types"
 
 // Compact lesson factory
 type SL = [string, string, string, string, string[], [string,string][], [string,string[],number,string][]]

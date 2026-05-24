@@ -1,4 +1,4 @@
-﻿import type { LessonContent } from "@/types"
+import type { LessonContent } from "@/types"
 
 export const readingAQuote: LessonContent = {
   slug: "reading-a-quote",

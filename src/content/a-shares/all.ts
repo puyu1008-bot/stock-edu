@@ -1,4 +1,4 @@
-﻿import type { LessonContent } from "@/types"
+import type { LessonContent } from "@/types"
 
 type SL = [string, string, string, string, string[], [string,string][], [string,string[],number,string][]]
 function mk([slug, title, trackId, stageId, moduleId, sections, callouts, quiz]: SL): LessonContent {

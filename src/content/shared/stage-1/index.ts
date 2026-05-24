@@ -1,4 +1,4 @@
-﻿import type { LessonContent } from "@/types"
+import type { LessonContent } from "@/types"
 
 // Helper to create lessons quickly
 function L(slug: string, title: string, sections: any[], callouts: any[], quiz: any[]): LessonContent {

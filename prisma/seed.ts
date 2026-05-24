@@ -1,4 +1,4 @@
-﻿import { PrismaClient } from "@prisma/client"
+import { PrismaClient } from "@prisma/client"
 import { getAllLessons } from "../src/lib/tracks"
 
 const prisma = new PrismaClient()
