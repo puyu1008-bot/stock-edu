@@ -1,7 +1,7 @@
 import type { LessonContent } from "@/types"
 
 // Reusing the compact format from all-content.ts
-type SL = [string, string, string, string, string[], [string,string][], [string,string[],number,string][]]
+type SL = [string, string, string, string, string, string[], [string,string][], [string,string[],number,string][]]
 function mk([slug, title, trackId, stageId, moduleId, sections, callouts, quiz]: SL): LessonContent {
   return {
     slug, title, trackId, stageId, moduleId,
@@ -82,7 +82,7 @@ export const stage2Lessons: LessonContent[] = [
     ["苹果用什么资金来回购？",["借来的钱","强大的自由现金流（每年$1000亿+）","卖资产的钱","政府补贴"],1,"苹果每年产生超过1000亿美元的自由现金流，这是它能持续大规模回购的根本原因。"],
     ["自由现金流怎么计算？",["净利润","经营现金流-资本开支","营业收入-成本","总资产-总负债"],1,"自由现金流=经营活动现金流-资本支出，是公司可以自由支配的真金白银。"],
     ["这个案例最核心的投资启示是什么？",["回购=股价上涨","寻找产生大量自由现金流的公司——它们有\"隐形增长引擎\"","苹果是最便宜的股票","不需要看基本面"],1,"高自由现金流=财务灵活性=回购/分红/投资的能力，这是优质公司的核心特征之一。"]]],
-].map(mk)
+].map((item: any) => mk(item))
 
 // ===== STAGE 3: Risk Management =====
 export const stage3Lessons: LessonContent[] = [
@@ -176,4 +176,4 @@ export const stage3Lessons: LessonContent[] = [
     ["Melvin Capital最终怎么了？",["赚了大钱","在2022年关闭——被GME轧空摧毁","收购了GME","什么都没变"],1,"Melvin Capital因轧空亏损数十亿美元，即使在收到外部注资后也未能恢复，最终关闭。"],
     ["这个案例对散户最重要的教训是什么？",["不要做空","过度集中+高杠杆=致命组合，华尔街机构也不例外","GME是好股票","散户永远是输家"],1,"机构的惨痛教训比任何教科书都有说服力——高集中度+高杠杆可以在极短时间内摧毁任何人的账户。"]]],
 
-].map(mk)
+].map((item: any) => mk(item))

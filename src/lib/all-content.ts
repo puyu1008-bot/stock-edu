@@ -1,7 +1,7 @@
 import type { LessonContent } from "@/types"
 
 // Compact lesson factory
-type SL = [string, string, string, string, string[], [string,string][], [string,string[],number,string][]]
+type SL = [string, string, string, string, string, string[], [string,string][], [string,string[],number,string][]]
 function mk([slug, title, trackId, stageId, moduleId, sections, callouts, quiz]: SL): LessonContent {
   return {
     slug, title, trackId, stageId, moduleId,
@@ -119,4 +119,4 @@ export const allLessons: LessonContent[] = [
     ["如果一家公司的毛利率从40%持续下滑到30%，这意味什么？",["公司变得更好","公司面临竞争加剧或成本上升，定价权在减弱","没有任何意义","股价会大涨"],1,"毛利率持续下滑通常是竞争加剧、产品降价或原材料成本上升的信号，需要警惕。"],
     ["利润表和资产负债表最大的区别是什么？",["没有区别","利润表反映一段时间，资产负债表反映一个时间点","利润表更小","资产负债表更不重要"],1,"利润表是\"一段时间\"（如一个季度、一年）的经营结果，资产负债表是\"某个时间点\"（如12月31日）的财务状况快照。"]]],
 
-].map(mk)
+].map((item: any) => mk(item))

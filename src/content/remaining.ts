@@ -1,6 +1,6 @@
 import type { LessonContent } from "@/types"
 
-type SL = [string, string, string, string, string[], [string,string][], [string,string[],number,string][]]
+type SL = [string, string, string, string, string, string[], [string,string][], [string,string[],number,string][]]
 function mk([slug, title, trackId, stageId, moduleId, sections, callouts, quiz]: SL): LessonContent {
   return { slug, title, trackId, stageId, moduleId,
     sections: sections.map(s => ({ heading: s.split("|")[0], paragraphs: [s.split("||").slice(1).join("||")] })),
@@ -82,6 +82,6 @@ export const allRemainingLessons: LessonContent[] = [
    [["VIX>30通常意味着什么？",["市场平静","市场处于高度恐慌状态","即将大涨","应该卖出一切"],1,"VIX>30通常表示市场恐慌——但也可能是接近阶段性底部的信号。"],
     ["2020年3月新冠疫情恐慌中VIX达到了多少？",["30","50","82","100"],2,"VIX在2020年3月达到82的历史极值，反映了新冠恐慌的极端程度。"]]],
 
-].map(mk)
+].map((item: any) => mk(item))
 
 export default allRemainingLessons
